@@ -3,7 +3,7 @@ import WiiDock from "./components/WiiDock";
 const App = () => {
   return (
     <div className="wii-background min-h-screen  flex flex-col items-center">
-      <div className="grid grid-cols-4 gap-3 mt-15">
+      <div className="grid grid-cols-4 gap-3 mt-10">
         <div className="wii-radius w-100 h-50 bg-amber-500">1</div>
         <div className="wii-radius w-100 h-50 bg-amber-500">2</div>
         <div className="wii-radius w-100 h-50 bg-amber-500">3</div>
