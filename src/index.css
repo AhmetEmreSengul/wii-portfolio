@@ -16,6 +16,11 @@
   );
 }
 
+html,
+body {
+  cursor: url("/cursor.png") 16 16, auto;
+}
+
 @utility wii-radius {
   border-radius: 11% 14% 12% 14% / 15% 20% 17% 18%;
 }
