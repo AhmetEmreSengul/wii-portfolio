@@ -25,6 +25,14 @@ body {
   border-radius: 11% 14% 12% 14% / 15% 20% 17% 18%;
 }
 
+@utility reflection {
+  border-radius: 75% 25% 100% 0% / 52% 0% 100% 48%;
+}
+
+@utility button-shadow {
+  box-shadow: 11px 7px 1px -5px rgb(195, 185, 192);
+}
+
 @font-face {
   font-family: "digi";
   src: url("./src/assets/fonts/DS-DIGI.TTF") format("truetype");
