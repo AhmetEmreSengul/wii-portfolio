@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@utility wii-background {
+  background-color: #f2f2f2;
+  background-image: repeating-linear-gradient(
+    180deg,
+    #f3eeee 0px,
+    #e0e0e0 10px,
+    #f2f2f2 3px,
+    #f2f2f2 10px
+  );
+}
+
+@utility wii-radius {
+  border-radius: 11% 14% 12% 14% / 15% 20% 17% 18% ;
+}
