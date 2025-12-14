@@ -20,18 +20,19 @@ const Channel = () => {
             loop
             autoPlay
             muted
-            title={channel.title}
           />
           <AnimatePresence>
             {hoverId === channel.id && (
               <motion.div
-                className="absolute tracking-wide bg-[#e4e4e2] -bottom-10 flex items-center justify-center z-2 w-110 h-10 mt-2 text-3xl font-semibold  rounded-full shadow-xl"
+                className="absolute bg-[#e4e4e2] -bottom-16 flex items-center justify-center z-2 w-110 h-15  rounded-full shadow-xl"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2, delay: 0.3 }}
                 exit={{ opacity: 0, scale: 0.9 }}
               >
-                {channel.title}
+                <p className="tracking-wide text-[#494949] text-3xl font-semibold">
+                  {channel.title}
+                </p>
               </motion.div>
             )}
           </AnimatePresence>

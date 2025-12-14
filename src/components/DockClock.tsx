@@ -5,7 +5,10 @@ const DockClock = () => {
     <div>
       <div className="absolute left-7/15 -top-5">
         <div className="flex items-end gap-5 text-[#737374]">
-          <p className="text-8xl font-[digi]">{dayjs().format("h:mm")}</p>{" "}
+          <p className="text-8xl font-[digi] tracking-tighter">
+            {dayjs().format("h")} <span className="animate-pulse">:</span>{" "}
+            {dayjs().format("mm")}{" "}
+          </p>
           <p className="text-2xl mb-2"> {dayjs().format("A")} </p>{" "}
         </div>
       </div>
