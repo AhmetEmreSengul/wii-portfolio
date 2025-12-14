@@ -24,10 +24,10 @@ const DockBackground = () => {
         </mask>
 
         <filter id="glow-shadow" x="-20%" y="-20%" width="140%" height="160%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
           <feDropShadow
             dx="0"
-            dy="1"
+            dy=""
             stdDeviation="8"
             floodColor="#000000"
             floodOpacity="0.3"
@@ -64,8 +64,8 @@ const DockBackground = () => {
         L 1000 1.5
       "
         fill="none"
-        stroke="#6fd3ff"
-        strokeWidth="10"
+        stroke="#3aadde"
+        strokeWidth="6"
         opacity="0.9"
         filter="url(#glow-shadow)"
         mask="url(#edge-fade)"
