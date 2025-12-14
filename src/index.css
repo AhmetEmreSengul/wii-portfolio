@@ -30,7 +30,7 @@ body {
 }
 
 @utility button-shadow {
-  box-shadow: 11px 7px 1px -5px rgb(195, 185, 192);
+  box-shadow: 11px 10px 1px -5px rgb(195, 185, 192);
 }
 
 @font-face {

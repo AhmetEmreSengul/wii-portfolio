@@ -27,10 +27,10 @@ const DockBackground = () => {
           <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
           <feDropShadow
             dx="0"
-            dy="6"
-            stdDeviation="6"
-            floodColor="#6fd3ff"
-            floodOpacity="0.25"
+            dy="1"
+            stdDeviation="8"
+            floodColor="#000000"
+            floodOpacity="0.3"
           />
         </filter>
       </defs>
