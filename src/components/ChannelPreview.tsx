@@ -15,7 +15,7 @@ const ChannelPreview = ({ channel, videoRefs }: ChannelPreviewProps) => {
       <defs>
         <mask id={`mask-${channel.id}`}>
           <path
-            d="M 6 0 C 35 -2 65 -2 94 0 C 97 0 100 3 100 6 C 101 16 101 24 100 34 C 100 37 97 40 94 40 C 65 42 35 42 6 40 C 3 40 0 37 0 34 C -1 24 -1 15 0 6 C 0 3 3 0 6 0 Z"
+            d="M 6 0 C 35 -1 65 -1 94 0 C 97 0 100 3 100 6 C 101 16 101 24 100 34 C 100 37 97 40 94 40 C 65 41 35 41 6 40 C 3 40 0 37 0 34 C -1 24 -1 15 0 6 C 0 3 3 0 6 0 Z"
             fill="white"
           />
         </mask>
