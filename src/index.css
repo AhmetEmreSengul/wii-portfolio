@@ -18,12 +18,12 @@
 
 html,
 body {
-  cursor: url("/cursor.png") 16 16, auto;
+  cursor: url("/cursor.png") 4 16, auto;
 }
 
-@utility wii-radius {
+/* @utility wii-radius {
   border-radius: 11% 14% 12% 14% / 15% 20% 17% 18%;
-}
+} */
 
 @utility reflection {
   border-radius: 75% 25% 100% 0% / 52% 0% 100% 48%;

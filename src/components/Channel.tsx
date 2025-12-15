@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { channePreview } from "../Data";
 import { AnimatePresence, motion } from "framer-motion";
+import ChannelPreview from "./ChannelPreview";
 
 const Channel = () => {
   const [hoverId, setHoverId] = useState<number>(0);
@@ -22,28 +23,19 @@ const Channel = () => {
     });
   };
 
+  console.log(hoverId);
+
   return (
-    <div className="grid grid-cols-4 gap-2 mt-12">
+    <div className="grid grid-cols-4  mt-12">
       {channePreview.map((channel) => (
         <div
-          className="wii-radius w-100 h-50 flex flex-col items-center relative"
+          className="w-105 h-52 flex flex-col items-center relative"
+          onMouseEnter={() => setHoverId(channel.id)}
+          onMouseLeave={() => setHoverId(0)}
+          onClick={() => handleClick(channel.id)}
           key={channel.id}
         >
-          <video
-            ref={(e) => {
-              videoRefs.current[channel.id] = e;
-            }}
-            onMouseEnter={() => setHoverId(channel.id)}
-            onMouseLeave={() => setHoverId(0)}
-            onClick={() => handleClick(channel.id)}
-            className="antialiased wii-radius w-full h-full object-cover border-[#b3b3b3] hover:border-[#5caed4] border-4 z-1 transition"
-            src={channel.video}
-            loop
-            autoPlay
-            muted
-            playsInline
-          />
-
+          <ChannelPreview channel={channel} videoRefs={videoRefs} />
           <AnimatePresence>
             {hoverId === channel.id && (
               <motion.div
