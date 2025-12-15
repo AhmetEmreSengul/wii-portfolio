@@ -4,8 +4,8 @@ import DockClock from "./DockClock";
 
 const WiiDock = () => {
   return (
-    <div className="relative w-full h-30 mt-10">
-      <div className="absolute -bottom-20 bg-[#ccced4] w-full h-20" />
+    <div className="fixed bottom-25 w-full h-30 ">
+      <div className="absolute -bottom-24 bg-[#ccced4] w-full h-24" />
       <DockBackground />
       <DockClock />
       <DockButtons />

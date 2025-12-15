@@ -33,9 +33,7 @@ const Channel = () => {
             ref={(e) => {
               videoRefs.current[channel.id] = e;
             }}
-            onMouseEnter={() => {
-              setHoverId(channel.id);
-            }}
+            onMouseEnter={() => setHoverId(channel.id)}
             onMouseLeave={() => setHoverId(0)}
             onClick={() => handleClick(channel.id)}
             className="antialiased wii-radius w-full h-full object-cover border-[#b3b3b3] hover:border-[#5caed4] border-4 z-1 transition"
