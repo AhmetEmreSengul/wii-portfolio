@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { channePreview } from "../Data";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Channel = () => {
   const [hoverId, setHoverId] = useState<number>(0);
   const [clickId, setClickId] = useState<number>(0);
+
+  const videoRefs = useRef<Record<number, HTMLVideoElement | null>>({});
+
+  const handleClick = (id: number) => {
+    Object.values(videoRefs.current).forEach((video) => {
+      video?.pause();
+    });
+    setClickId(id);
+  };
+
+  const handleClose = () => {
+    setClickId(0);
+    Object.values(videoRefs.current).forEach((video) => {
+      video?.play();
+    });
+  };
 
   return (
     <div className="grid grid-cols-4 gap-2 mt-12">
@@ -14,11 +30,14 @@ const Channel = () => {
           key={channel.id}
         >
           <video
+            ref={(e) => {
+              videoRefs.current[channel.id] = e;
+            }}
             onMouseEnter={() => {
               setHoverId(channel.id);
             }}
             onMouseLeave={() => setHoverId(0)}
-            onClick={() => setClickId(channel.id)}
+            onClick={() => handleClick(channel.id)}
             className="antialiased wii-radius w-full h-full object-cover border-[#b3b3b3] hover:border-[#5caed4] border-4 z-1 transition"
             src={channel.video}
             loop
