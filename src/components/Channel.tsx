@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Channel = () => {
   const [hoverId, setHoverId] = useState<number>(0);
+  const [clickId, setClickId] = useState<number>(0);
 
   return (
     <div className="grid grid-cols-4 gap-2 mt-12">
@@ -13,13 +14,17 @@ const Channel = () => {
           key={channel.id}
         >
           <video
-            onMouseEnter={() => setHoverId(channel.id)}
+            onMouseEnter={() => {
+              setHoverId(channel.id);
+            }}
             onMouseLeave={() => setHoverId(0)}
+            onClick={() => setClickId(channel.id)}
             className="antialiased wii-radius w-full h-full object-cover border-[#b3b3b3] hover:border-[#5caed4] border-4 z-1 transition"
             src={channel.video}
             loop
             autoPlay
             muted
+            playsInline
           />
 
           <AnimatePresence>
@@ -30,12 +35,12 @@ const Channel = () => {
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  transition: { duration: 0.2, delay: 0.4 }, 
+                  transition: { duration: 0.2, delay: 0.4 },
                 }}
                 exit={{
                   opacity: 0,
                   scale: 0.9,
-                  transition: { duration: 0.2 }, 
+                  transition: { duration: 0.2 },
                 }}
               >
                 <p className="tracking-wide text-[#494949] text-3xl font-semibold">
@@ -44,6 +49,12 @@ const Channel = () => {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {clickId === channel.id && (
+            <div className="inset-0 fixed h-screen w-screen flex items-center justify-center z-3">
+              <video src={channel.video} autoPlay loop />
+            </div>
+          )}
         </div>
       ))}
     </div>
