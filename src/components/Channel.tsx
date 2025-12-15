@@ -26,10 +26,10 @@ const Channel = () => {
   console.log(hoverId);
 
   return (
-    <div className="grid grid-cols-4  mt-12">
+    <div className="grid grid-cols-4 mt-9">
       {channePreview.map((channel) => (
         <div
-          className="w-105 h-52 flex flex-col items-center relative"
+          className="w-105 h-55 flex flex-col items-center relative -mx-1 -my-2"
           onMouseEnter={() => setHoverId(channel.id)}
           onMouseLeave={() => setHoverId(0)}
           onClick={() => handleClick(channel.id)}
