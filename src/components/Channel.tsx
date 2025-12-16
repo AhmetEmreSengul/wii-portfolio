@@ -38,11 +38,11 @@ const Channel = () => {
             <AnimatePresence>
               {hoverId === channel.id && !activeChannel && (
                 <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
+                  exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute bg-[#e4e4e2] -bottom-16 z-2 w-110 h-15 rounded-full shadow-xl flex items-center justify-center"
+                  className="absolute bg-[#e4e4e2] -bottom-14 z-2 w-110 h-15 rounded-full shadow-xl flex items-center justify-center"
                 >
                   <p className="tracking-wide text-[#494949] text-3xl font-semibold">
                     {channel.title}
