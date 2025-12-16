@@ -3,7 +3,7 @@ export const channePreview = [
     id: 1,
     title: "CV Channel",
     link: "https://drive.google.com/file/d/1_QAg-wyRPbwtz5hSXotjKfW3eRNIXKOo/view?usp=drive_link",
-    video: "/",
+    video: "/cv.mp4",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export const channePreview = [
   {
     id: 6,
     title: "Experience Channel",
-    
+
     video: "/squirell.mp4",
   },
   {
