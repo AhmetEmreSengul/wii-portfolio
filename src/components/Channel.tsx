@@ -18,6 +18,10 @@ const Channel = () => {
     setActiveChannel(null);
   };
 
+  const isClickable = (channel: (typeof channePreview)[number]) => {
+    return Boolean(channel.title && channel.link);
+  };
+
   return (
     <>
       <div className="grid grid-cols-4 mt-9">
@@ -27,7 +31,10 @@ const Channel = () => {
             className="w-105 h-55 flex flex-col items-center relative -mx-1 -my-2"
             onMouseEnter={() => setHoverId(channel.id)}
             onMouseLeave={() => setHoverId(null)}
-            onClick={() => openChannel(channel.id)}
+            onClick={() => {
+              if (!isClickable(channel)) return;
+              openChannel(channel.id);
+            }}
           >
             <ChannelPreview
               channel={channel}
@@ -36,7 +43,7 @@ const Channel = () => {
             />
 
             <AnimatePresence>
-              {hoverId === channel.id && !activeChannel && (
+              {hoverId === channel.id && !activeChannel && channel.title && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
@@ -89,7 +96,19 @@ const Channel = () => {
                 </button>
 
                 <button className="w-140 text-[#494a4a] tracking-tight text-6xl h-30 border-4 border-[#34beed] bg-[#e3e8ef] rounded-full inset-shadow-2xs hover:scale-105 transition">
-                  Start
+                  {channePreview.map(({ id, link }) => {
+                    if (id === activeChannel) {
+                      return (
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Start
+                        </a>
+                      );
+                    }
+                  })}
                 </button>
               </div>
             </motion.div>
