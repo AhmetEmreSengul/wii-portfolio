@@ -27,6 +27,25 @@
   );
 }
 
+@utility video-mask {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'>\
+<path fill='white' d='M6 0 C35 -1 65 -1 94 0 C97 0 100 3 100 6 \
+C101 16 101 24 100 34 C100 37 97 40 94 40 \
+C65 41 35 41 6 40 C3 40 0 37 0 34 \
+C-1 24 -1 15 0 6 C0 3 3 0 6 0 Z'/>\
+</svg>");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position: center;
+
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-position: center;
+
+  overflow: hidden;
+}
+
 html,
 body {
   cursor: url("/cursor.png") 4 16, auto;

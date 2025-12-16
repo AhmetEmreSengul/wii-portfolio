@@ -63,29 +63,32 @@ const Channel = () => {
         {activeChannel !== null && (
           <motion.div
             key="overlay"
-            className="fixed inset-0 z-10 flex items-center justify-center"
-            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-10 flex  bg-black"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
             <motion.div
               layoutId={`video-${activeChannel}`}
-              className="w-full h-full flex flex-col justify-end"
+              className="w-full h-full flex flex-col justify-end video-mask scale-98"
             >
               <video
                 src={channePreview.find((c) => c.id === activeChannel)?.video}
                 autoPlay
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 onClick={(e) => e.stopPropagation()}
               />
 
-              <div className="w-full h-50 fixed border-t-2 border-black channel-background flex items-center justify-center gap-5">
+              <div className="w-full h-55 mb-10 fixed border-t-2 border-black channel-background flex items-center justify-center gap-25">
                 <button
-                  className="w-140 text-6xl h-30 border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative"
+                  className="w-140 text-[#494a4a] text-6xl tracking-tight h-30 border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative hover:scale-105 transition"
                   onClick={closeChannel}
                 >
                   Wii Menu
                 </button>
 
-                <button className="w-140 text-6xl h-30 border-4 border-[#34beed] bg-[#e3e8ef] rounded-full inset-shadow-2xs">
+                <button className="w-140 text-[#494a4a] tracking-tight text-6xl h-30 border-4 border-[#34beed] bg-[#e3e8ef] rounded-full inset-shadow-2xs hover:scale-105 transition">
                   Start
                 </button>
               </div>
