@@ -12,23 +12,37 @@ const ChannelPreview = ({
   videoRefs,
   hoverId,
 }: ChannelPreviewProps) => {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const clickRef = useRef<HTMLAudioElement | null>(null);
+  const hoverRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio("/sounds/video-open.mp3");
-    audioRef.current.volume = 0.3;
+    clickRef.current = new Audio("/sounds/video-open.mp3");
+    clickRef.current.volume = 0.3;
+
+    hoverRef.current = new Audio("/sounds/hover.mp3");
+    hoverRef.current.volume = 0.2;
+    hoverRef.current.preload = "auto";
   }, []);
 
   const handleClick = () => {
-    if (!audioRef.current) return;
+    if (!clickRef.current) return;
 
-    // rewind so it can be clicked rapidly
-    audioRef.current.currentTime = 0;
-    audioRef.current.play().catch(() => {});
+    clickRef.current.currentTime = 0;
+
+    if (channel.title) {
+      clickRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleHover = () => {
+    if (!hoverRef.current) return;
+
+    hoverRef.current.currentTime = 0;
+    hoverRef.current.play().catch(() => {});
   };
 
   return (
-    <div onClick={handleClick}>
+    <div onClick={handleClick} onPointerEnter={handleHover}>
       <svg
         viewBox="-4 -4 108 48"
         preserveAspectRatio="none"
