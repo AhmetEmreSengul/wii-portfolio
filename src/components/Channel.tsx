@@ -40,8 +40,8 @@ const Channel = () => {
   return (
     <>
       <Intro />
-      <div>
-        <div className="grid grid-cols-4 mt-9">
+      <div className="flex items-center justify-center h-screen pb-45">
+        <div className="grid grid-cols-4 ">
           {channePreview.map((channel) => (
             <div
               key={channel.id}
