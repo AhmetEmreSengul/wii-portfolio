@@ -17,10 +17,10 @@ const ChannelPreview = ({
 
   useEffect(() => {
     clickRef.current = new Audio("/sounds/video-open.mp3");
-    clickRef.current.volume = 0.3;
+    clickRef.current.volume = 0.2;
 
     hoverRef.current = new Audio("/sounds/hover.mp3");
-    hoverRef.current.volume = 0.2;
+    hoverRef.current.volume = 0.1;
     hoverRef.current.preload = "auto";
   }, []);
 

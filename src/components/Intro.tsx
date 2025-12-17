@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 const Intro = () => {
   const [intro, setIntro] = useState(true);
 
+  const audio = new Audio("/sounds/Wii_Music.mp3");
+  audio.volume = 0.1;
+  audio.preload = "auto";
+
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       if (
@@ -13,6 +17,7 @@ const Intro = () => {
         e.key === "Space"
       ) {
         setIntro(false);
+        audio.play();
       }
     });
   }, []);
@@ -24,7 +29,7 @@ const Intro = () => {
           className="inset-0 z-10 w-full bg-black h-screen fixed"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
         >
           <video
             src="/videos/intro.mp4"
