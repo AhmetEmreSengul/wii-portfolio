@@ -1,12 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion";
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Intro = () => {
   const [intro, setIntro] = useState(true);
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
-      if (e.key === "a" || "A" || "Enter" || "Space") {
+      if (
+        e.key === "a" ||
+        e.key === "A" ||
+        e.key === "Enter" ||
+        e.key === "Space"
+      ) {
         setIntro(false);
       }
     });
