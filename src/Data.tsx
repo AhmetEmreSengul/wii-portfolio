@@ -3,7 +3,7 @@ export const channePreview = [
     id: 1,
     title: "CV Channel",
     link: "https://drive.google.com/file/d/1_QAg-wyRPbwtz5hSXotjKfW3eRNIXKOo/view?usp=drive_link",
-    video: "/videos/cv.mp4",
+    video: "/videos/CV.mp4",
   },
   {
     id: 2,
