@@ -71,7 +71,7 @@ const ChannelPreview = ({
               videoRefs.current[channel.id] = el;
             }}
             transition={{ duration: 0.3 }}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fill"
             src={channel.video}
             loop
             autoPlay
