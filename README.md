@@ -1,73 +1,124 @@
-# React + TypeScript + Vite
+# Wii Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive portfolio website inspired by the Nintendo Wii console interface. This project presents your work as "channels" in a nostalgic Wii-style interface with smooth animations and interactive elements.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Wii Portfolio Demo](./public/videos/demo.mp4)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Wii Channel Grid**: Display your projects as interactive channels in a 4-column grid layout
+- **Video Previews**: Each channel can have an associated video preview that plays on hover
+- **Interactive Dock**: Bottom dock with clock display and navigation buttons
+- **Smooth Animations**: Powered by Framer Motion for fluid transitions and interactions
+- **Email Contact Form**: Integrated contact form accessible from the dock
+- **Responsive Design**: Built with Tailwind CSS for modern, responsive styling
+- **Sound Effects**: Audio feedback for user interactions
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Day.js** - Date and time manipulation
+- **React Icons** - Icon library
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (v18 or higher recommended)
+- npm or yarn package manager
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd wii
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to the URL shown in the terminal (typically `http://localhost:5173`)
+
+## Project Structure
+
+```
+wii/
+├── src/
+│   ├── components/
+│   │   ├── Channel.tsx          # Main channel grid component
+│   │   ├── ChannelPreview.tsx   # Individual channel preview
+│   │   ├── DockBackground.tsx  # Dock visual background
+│   │   ├── DockButtons.tsx      # Dock navigation buttons
+│   │   ├── DockClock.tsx        # Clock display component
+│   │   ├── EmailForm.tsx        # Contact form modal
+│   │   ├── Intro.tsx            # Intro animation
+│   │   └── WiiDock.tsx          # Main dock container
+│   ├── assets/
+│   │   └── fonts/               # Custom fonts
+│   ├── App.tsx                  # Main app component
+│   ├── Data.tsx                 # Channel data configuration
+│   ├── index.css                # Global styles
+│   └── main.tsx                 # Application entry point
+├── public/                      # Static assets (videos, sounds, etc.)
+├── package.json
+├── vite.config.ts
+└── tsconfig.json
+```
+
+## Configuration
+
+### Adding Your Projects
+
+Edit `src/Data.tsx` to add or modify your project channels:
+
+```typescript
+export const channePreview = [
+  {
+    id: 1,
+    title: "Your Project Name",
+    link: "https://your-project-url.com",
+    video: "/videos/your-video.mp4",
+  },
+  // Add more projects...
+];
+```
+
+### Customizing Videos
+
+Place your video previews in the `public/videos/` directory and reference them in the channel data. Videos should be in a format supported by HTML5 video elements (MP4 recommended).
+
+### Adding Sound Effects
+
+Place audio files in the `public/sounds/` directory. The project currently uses `video-close.mp3` for channel closing interactions.
+
+## Available Scripts
+
+- `npm run dev` - Start development server with hot module replacement
+- `npm run build` - Build the project for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check code quality
+
+## Building for Production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory, ready to be deployed to any static hosting service.
