@@ -4,7 +4,7 @@ An interactive portfolio website inspired by the Nintendo Wii console interface.
 
 ## Demo
 
-![Wii Portfolio Demo](./public/videos/demo.mp4)
+![Wii Portfolio Demo](./public/videos/demo.gif)
 
 ## Features
 
