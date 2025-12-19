@@ -15,6 +15,16 @@
     transparent 9px
   );
 }
+@utility form-background {
+  background-color: #e0ddddc9;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.6) 2px,
+    transparent 2px,
+    transparent 9px
+  );
+}
 
 @utility channel-background {
   background-color: #c4c4bc;

@@ -11,7 +11,7 @@ const EmailForm = ({
       <motion.form
         action="https://formspree.io/f/xbdrjlwo"
         method="POST"
-        className="size-120 bg-[#99999bab] backdrop-blur-md rounded-2xl flex flex-col gap-5 p-5 justify-center items-center relative"
+        className="size-120 form-background backdrop-blur-md rounded-2xl flex flex-col gap-5 p-5 justify-center items-center relative"
         initial={{ opacity: 0, y: 500 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 500 }}
@@ -32,13 +32,13 @@ const EmailForm = ({
           required
         />
         <textarea
-          className="w-full border-2  backdrop-blur-sm  rounded-lg px-2 py-3 border-[#3aadde] hover:border-[#6bc8f3] transition"
+          className="w-full border-2  backdrop-blur-sm rounded-lg px-2 py-3 border-[#3aadde] hover:border-[#6bc8f3] transition"
           name="message"
           placeholder="Enter your message."
           required
         />
         <button
-          className="px-7 py-3 mt-5 rounded-lg bg-sky-300/50 hover:bg-sky-300 transition"
+          className="px-7 py-3 mt-5 rounded-lg bg-sky-400 hover:bg-sky-300 transition"
           type="submit"
         >
           Send

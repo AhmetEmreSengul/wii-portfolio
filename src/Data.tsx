@@ -27,18 +27,17 @@ export const channePreview = [
     id: 5,
     title: "Time Slot Cafe Channel",
     link: "https://github.com/AhmetEmreSengul/coffee",
-    video: "/videos/AES.mp4",
+    video: "/videos/time.mp4",
   },
   {
     id: 6,
-    title: "Experience Channel",
-
-    video: "/videos/squirell.mp4",
+    title: "",
+    video: "/videos/empty.mp4",
   },
   {
     id: 7,
-    title: "Contact Channel",
-    video: "/videos/imagineAI.mp4",
+    title: "",
+    video: "/videos/empty.mp4",
   },
   {
     id: 8,

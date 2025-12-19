@@ -108,7 +108,7 @@ const Channel = () => {
                   onClick={(e) => e.stopPropagation()}
                 />
 
-                <div className="w-full h-55 mb-10 fixed border-t-2 border-black channel-background flex items-center justify-center gap-25">
+                <div className="w-full h-52 mb-10 fixed border-t-2 border-black channel-background flex items-center justify-center gap-25">
                   <button
                     className="w-140 text-[#494a4a] text-6xl tracking-tight h-30 border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative hover:scale-105 transition"
                     onClick={() => {
