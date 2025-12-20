@@ -76,5 +76,5 @@ button {
 
 @font-face {
   font-family: "digi";
-  src: url("./src/assets/fonts/DS-DIGI.TTF") format("truetype");
+  src: url("/fonts/DS-DIGI.TTF") format("truetype");
 }
