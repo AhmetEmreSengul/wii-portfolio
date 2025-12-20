@@ -43,7 +43,7 @@ const Channel = () => {
     <>
       <Intro />
       <div className="flex items-center justify-center h-screen pb-45">
-       {warning && <SiteWarning setWarning={setWarning}/>}
+        {warning && <SiteWarning setWarning={setWarning} />}
         <div className="grid grid-cols-3 scale-120 md:scale-100 md:grid-cols-4 lg:scale-100 xl:scale-100 w-full">
           {channePreview.map((channel) => (
             <div
@@ -111,9 +111,9 @@ const Channel = () => {
                   onClick={(e) => e.stopPropagation()}
                 />
 
-                <div className="w-full h-42 lg:h-52 bottom-0 lg:bottom-10 absolute border-t-2 border-black channel-background flex items-center justify-center gap-7 lg:gap-25 rounded-b-4xl lg:rounded-none">
+                <div className="w-full h-42 lg:h-52 bottom-0 xl:bottom-10 absolute border-t-2 border-black channel-background flex items-center justify-center gap-7 lg:gap-25 rounded-b-4xl xl:rounded-none">
                   <button
-                    className="w-45 text-3xl lg:text-6xl lg:w-140 h-20 lg:h-30 text-[#494a4a] tracking-tight border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative hover:scale-105 transition"
+                    className="w-45 text-3xl lg:text-6xl lg:w-100 xl:w-140 h-20 lg:h-30 text-[#494a4a] tracking-tight border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative hover:scale-105 transition"
                     onClick={() => {
                       {
                         closeChannel();
@@ -128,7 +128,7 @@ const Channel = () => {
                     if (id === activeChannel) {
                       return (
                         <div
-                          className="w-45 text-3xl lg:text-6xl lg:w-140  h-20 lg:h-30 text-[#494a4a] tracking-tight  border-4 border-[#34beed] bg-[#e3e8ef] rounded-full inset-shadow-2xs hover:scale-105 transition flex items-center justify-center"
+                          className="w-45 text-3xl lg:text-6xl lg:w-100 xl:w-140  h-20 lg:h-30 text-[#494a4a] tracking-tight  border-4 border-[#34beed] bg-[#e3e8ef] rounded-full inset-shadow-2xs hover:scale-105 transition flex items-center justify-center"
                           onClick={() =>
                             window.open(link, "_blank", "noopener,noreferrer")
                           }
