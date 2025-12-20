@@ -41,11 +41,11 @@ const Channel = () => {
     <>
       <Intro />
       <div className="flex items-center justify-center h-screen pb-45">
-        <div className="grid grid-cols-4 ">
+        <div className="grid grid-cols-3 scale-120 md:scale-100 md:grid-cols-4 lg:scale-100 xl:scale-100 w-full">
           {channePreview.map((channel) => (
             <div
               key={channel.id}
-              className="w-105 h-55 flex flex-col items-center relative -mx-1 -my-2"
+              className="w-23 h-17 md:w-55 md:h-35 lg:w-63 lg:h-40 xl:w-105 xl:h-55 flex flex-col items-center relative xl:-mx-1 xl:-my-2"
               onMouseEnter={() => setHoverId(channel.id)}
               onMouseLeave={() => setHoverId(null)}
               onClick={() => {
@@ -99,18 +99,18 @@ const Channel = () => {
             >
               <motion.div
                 layoutId={`video-${activeChannel}`}
-                className="w-full h-full flex flex-col justify-end video-mask scale-98"
+                className="w-full h-full flex flex-col justify-end rounded-2xl scale-95 xl:video-mask xl:scale-99 relative"
               >
                 <video
                   src={channePreview.find((c) => c.id === activeChannel)?.video}
                   autoPlay
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-4xl"
                   onClick={(e) => e.stopPropagation()}
                 />
 
-                <div className="w-full h-52 mb-10 fixed border-t-2 border-black channel-background flex items-center justify-center gap-25">
+                <div className="w-full h-42 lg:h-52 bottom-0 lg:bottom-10 absolute border-t-2 border-black channel-background flex items-center justify-center gap-7 lg:gap-25 rounded-b-4xl lg:rounded-none">
                   <button
-                    className="w-140 text-[#494a4a] text-6xl tracking-tight h-30 border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative hover:scale-105 transition"
+                    className="w-45 text-3xl lg:text-6xl lg:w-140 h-20 lg:h-30 text-[#494a4a] tracking-tight border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative hover:scale-105 transition"
                     onClick={() => {
                       {
                         closeChannel();
@@ -125,7 +125,7 @@ const Channel = () => {
                     if (id === activeChannel) {
                       return (
                         <div
-                          className="w-140 text-[#494a4a] tracking-tight text-6xl h-30 border-4 border-[#34beed] bg-[#e3e8ef] rounded-full inset-shadow-2xs hover:scale-105 transition flex items-center justify-center"
+                          className="w-45 text-3xl lg:text-6xl lg:w-140  h-20 lg:h-30 text-[#494a4a] tracking-tight  border-4 border-[#34beed] bg-[#e3e8ef] rounded-full inset-shadow-2xs hover:scale-105 transition flex items-center justify-center"
                           onClick={() =>
                             window.open(link, "_blank", "noopener,noreferrer")
                           }

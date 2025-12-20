@@ -14,7 +14,7 @@ const Intro = () => {
         e.key === "a" ||
         e.key === "A" ||
         e.key === "Enter" ||
-        e.key === "Space"
+        e.key === " "
       ) {
         setIntro(false);
         audio.play();
@@ -26,18 +26,16 @@ const Intro = () => {
     <AnimatePresence>
       {intro && (
         <motion.div
-          className="inset-0 z-10 w-full bg-black h-screen fixed"
+          className="inset-0 z-10 w-full bg-black h-screen flex items-center fixed"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
+          onClick={() => {
+            setIntro(false);
+            audio.play();
+          }}
         >
-          <video
-            src="/videos/intro.mp4"
-            className="scale-90"
-            autoPlay
-            loop
-            muted
-          />
+          <video src="/videos/intro.mp4" autoPlay loop muted />
         </motion.div>
       )}
     </AnimatePresence>
