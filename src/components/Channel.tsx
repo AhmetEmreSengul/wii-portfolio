@@ -3,10 +3,12 @@ import { channePreview } from "../Data";
 import { AnimatePresence, motion } from "framer-motion";
 import ChannelPreview from "./ChannelPreview";
 import Intro from "./Intro";
+import SiteWarning from "./SiteWarning";
 
 const Channel = () => {
   const [hoverId, setHoverId] = useState<number | null>(null);
   const [activeChannel, setActiveChannel] = useState<number | null>(null);
+  const [warning, setWarning] = useState<boolean>(true);
 
   const closeRef = useRef<HTMLAudioElement | null>(null);
 
@@ -41,6 +43,7 @@ const Channel = () => {
     <>
       <Intro />
       <div className="flex items-center justify-center h-screen pb-45">
+       {warning && <SiteWarning setWarning={setWarning}/>}
         <div className="grid grid-cols-3 scale-120 md:scale-100 md:grid-cols-4 lg:scale-100 xl:scale-100 w-full">
           {channePreview.map((channel) => (
             <div
