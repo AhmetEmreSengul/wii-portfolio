@@ -44,11 +44,11 @@ const Channel = () => {
       <Intro />
       <div className="flex items-center justify-center h-screen pb-45">
         {warning && <SiteWarning setWarning={setWarning} />}
-        <div className="grid grid-cols-3 scale-120 md:scale-100 md:grid-cols-4 lg:scale-100 xl:scale-100 w-full">
+        <div className="grid grid-cols-3 scale-120 md:scale-100 md:grid-cols-4 w-full">
           {channePreview.map((channel) => (
             <div
               key={channel.id}
-              className="w-23 h-17 md:w-55 md:h-35 lg:w-63 lg:h-40 xl:w-105 xl:h-55 flex flex-col items-center relative xl:-mx-1 xl:-my-2"
+              className="w-23 h-17 md:w-55 md:h-35 lg:w-63 lg:h-40 xl:w-84 xl:h-43 2xl:w-105 2xl:h-55 flex flex-col items-center relative xl:-mx-1 xl:-my-2"
               onMouseEnter={() => setHoverId(channel.id)}
               onMouseLeave={() => setHoverId(null)}
               onClick={() => {
