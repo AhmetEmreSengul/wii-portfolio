@@ -14,9 +14,9 @@ const DockClock = () => {
 
   return (
     <div>
-      <div className="absolute left-2/5 md:left-7/15 bottom-10 md:-top-5">
+      <div className="absolute left-3/7 md:left-7/15 bottom-10 md:-top-5">
         <div className="flex items-end gap-5 text-[#737374]">
-          <p className="text-3xl md:text-8xl font-[digi] tracking-tighter">
+          <p className="text-2xl md:text-7xl lg:text-8xl font-[digi] tracking-tighter">
             {now.format("h")} <span className="animate-pulse">:</span>{" "}
             {now.format("mm")}
           </p>
@@ -24,9 +24,11 @@ const DockClock = () => {
         </div>
       </div>
 
-      <div className="absolute left-7/16 top-25">
+      <div className="absolute left-7/15 top-25">
         <div className="flex items-end gap-5 text-[#636364]">
-          <p className="text-xl md:text-6xl">{now.format("ddd M/D")}</p>
+          <p className="text-2xl md:text-5xl lg:text-6xl">
+            {now.format("ddd M/D")}
+          </p>
         </div>
       </div>
     </div>

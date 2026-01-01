@@ -44,11 +44,11 @@ const Channel = () => {
       <Intro />
       <div className="flex items-center justify-center h-screen pb-45">
         {warning && <SiteWarning setWarning={setWarning} />}
-        <div className="grid grid-cols-3 scale-120 md:scale-100 md:grid-cols-4 w-full">
+        <div className="grid grid-cols-3  md:scale-100 md:grid-cols-4 w-full">
           {channePreview.map((channel) => (
             <div
               key={channel.id}
-              className="w-23 h-17 md:w-55 md:h-35 lg:w-63 lg:h-40 xl:w-84 xl:h-43 2xl:w-105 2xl:h-55 flex flex-col items-center relative xl:-mx-1 xl:-my-2"
+              className="w-28 h-20 md:w-48 md:h-35 lg:w-63 lg:h-40 xl:w-80 xl:h-43 2xl:w-95 2xl:h-52 flex flex-col items-center relative xl:-mx-1 xl:-my-2"
               onMouseEnter={() => setHoverId(channel.id)}
               onMouseLeave={() => setHoverId(null)}
               onClick={() => {
@@ -102,16 +102,16 @@ const Channel = () => {
             >
               <motion.div
                 layoutId={`video-${activeChannel}`}
-                className="w-full h-full flex flex-col justify-end rounded-2xl scale-95 xl:video-mask xl:scale-99 relative"
+                className="w-full h-full flex flex-col justify-end rounded-[120px] scale-92 md:scale-95 relative"
               >
                 <video
                   src={channePreview.find((c) => c.id === activeChannel)?.video}
                   autoPlay
-                  className="w-full h-full object-cover rounded-4xl"
+                  className="w-full h-full object-cover rounded-4xl md:rounded-[120px]"
                   onClick={(e) => e.stopPropagation()}
                 />
 
-                <div className="w-full h-42 lg:h-52 bottom-0 xl:bottom-10 absolute border-t-2 border-black channel-background flex items-center justify-center gap-7 lg:gap-25 rounded-b-4xl xl:rounded-none">
+                <div className="w-full h-42 lg:h-52 bottom-0 absolute border-t-2 border-black channel-background flex items-center justify-center gap-7 lg:gap-25 rounded-b-4xl md:rounded-b-[120px]">
                   <button
                     className="w-45 text-3xl lg:text-6xl lg:w-100 xl:w-140 h-20 lg:h-30 text-[#494a4a] tracking-tight border-4 bg-[#e3e8ef] border-[#34beed] rounded-full relative hover:scale-105 transition"
                     onClick={() => {

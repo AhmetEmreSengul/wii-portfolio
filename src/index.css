@@ -37,7 +37,7 @@
   );
 }
 
-@utility video-mask {
+/* @utility video-mask {
   -webkit-mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'>\
 <path fill='white' d='M6 0 C35 -1 65 -1 94 0 C97 0 100 3 100 6 \
@@ -55,6 +55,7 @@ C-1 24 -1 15 0 6 C0 3 3 0 6 0 Z'/>\
 
   overflow: hidden;
 }
+ */
 
 html,
 body,
